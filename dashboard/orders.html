@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | TechSolutions</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="dashboard-page">
+    <header id="dashboard-header">
+        <div class="dashboard-header-content">
+            <div class="dashboard-logo">
+                <a href="../index.html">
+                    <i data-feather="monitor"></i>
+                    <span>TechSolutions</span>
+                </a>
+            </div>
+            <div class="dashboard-search">
+                <div class="search-input">
+                    <i data-feather="search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            <div class="dashboard-actions">
+                <a href="../cart.html" class="dashboard-icon-btn">
+                    <i data-feather="shopping-cart"></i>
+                    <span class="badge" id="cart-count">0</span>
+                </a>
+                <a href="#" class="dashboard-icon-btn">
+                    <i data-feather="bell"></i>
+                    <span class="badge">3</span>
+                </a>
+                <div class="dashboard-user-dropdown">
+                    <button class="dashboard-user-btn">
+                        <div class="user-avatar">
+                            <i data-feather="user"></i>
+                        </div>
+                        <span id="user-name">John Doe</span>
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                    <div class="dashboard-dropdown-menu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i data-feather="user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="orders.html" class="dropdown-item">
+                            <i data-feather="package"></i>
+                            <span>My Orders</span>
+                        </a>
+                        <a href="#" class="dropdown-item" id="logout-btn">
+                            <i data-feather="log-out"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i data-feather="home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="orders.html">
+                            <i data-feather="package"></i>
+                            <span>My Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i data-feather="user"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products.html">
+                            <i data-feather="shopping-bag"></i>
+                            <span>Browse Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="sidebar-logout-btn">
+                            <i data-feather="log-out"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="page-header">
+                <h1>My Orders</h1>
+                <p>Track and manage your orders</p>
+            </div>
+
+            <div class="orders-filter">
+                <div class="filter-group">
+                    <label for="status-filter">Filter by Status:</label>
+                    <select id="status-filter">
+                        <option value="all">All Orders</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="date-filter">Filter by Date:</label>
+                    <select id="date-filter">
+                        <option value="all">All Time</option>
+                        <option value="last-month">Last Month</option>
+                        <option value="last-3-months">Last 3 Months</option>
+                        <option value="last-6-months">Last 6 Months</option>
+                        <option value="last-year">Last Year</option>
+                    </select>
+                </div>
+                <div class="search-orders">
+                    <input type="text" id="order-search" placeholder="Search orders...">
+                    <button id="search-btn">
+                        <i data-feather="search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="orders-list">
+                <div class="table-responsive">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Products</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table">
+                            <!-- Orders will be loaded via JavaScript -->
+                            <tr>
+                                <td colspan="6" class="table-loading">
+                                    <div class="loading-spinner">
+                                        <i data-feather="loader"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="orders-pagination" id="orders-pagination">
+                    <!-- Pagination will be added via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Order Details Modal -->
+            <div class="modal" id="order-details-modal">
+                <div class="modal-content modal-lg">
+                    <div class="modal-header">
+                        <h3>Order Details - <span id="modal-order-id"></span></h3>
+                        <button class="modal-close">
+                            <i data-feather="x"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="order-status-tracker">
+                            <div class="status-step" data-status="pending">
+                                <div class="status-icon">
+                                    <i data-feather="file-text"></i>
+                                </div>
+                                <div class="status-label">Order Placed</div>
+                                <div class="status-date" id="status-date-pending"></div>
+                            </div>
+                            <div class="status-step" data-status="processing">
+                                <div class="status-icon">
+                                    <i data-feather="clipboard"></i>
+                                </div>
+                                <div class="status-label">Processing</div>
+                                <div class="status-date" id="status-date-processing"></div>
+                            </div>
+                            <div class="status-step" data-status="shipped">
+                                <div class="status-icon">
+                                    <i data-feather="truck"></i>
+                                </div>
+                                <div class="status-label">Shipped</div>
+                                <div class="status-date" id="status-date-shipped"></div>
+                            </div>
+                            <div class="status-step" data-status="delivered">
+                                <div class="status-icon">
+                                    <i data-feather="check-circle"></i>
+                                </div>
+                                <div class="status-label">Delivered</div>
+                                <div class="status-date" id="status-date-delivered"></div>
+                            </div>
+                        </div>
+
+                        <div class="order-details-grid">
+                            <div class="order-details-col">
+                                <h4>Order Information</h4>
+                                <div class="details-group">
+                                    <div class="detail-row">
+                                        <span class="detail-label">Order Date:</span>
+                                        <span class="detail-value" id="order-date"></span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Payment Method:</span>
+                                        <span class="detail-value" id="payment-method"></span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">Payment Status:</span>
+                                        <span class="detail-value" id="payment-status"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-details-col">
+                                <h4>Shipping Address</h4>
+                                <div class="details-group">
+                                    <div class="address-block" id="shipping-address">
+                                        <!-- Address will be loaded via JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-items">
+                            <h4>Order Items</h4>
+                            <div class="table-responsive">
+                                <table class="dashboard-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="order-items-table">
+                                        <!-- Order items will be loaded via JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="order-summary">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="order-subtotal"></span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping:</span>
+                                <span id="order-shipping"></span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax:</span>
+                                <span id="order-tax"></span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span id="order-total"></span>
+                            </div>
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="btn btn-secondary" id="track-shipment-btn">Track Shipment</button>
+                            <button class="btn btn-primary" id="download-invoice-btn">Download Invoice</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer id="dashboard-footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> TechSolutions. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-service.html">Terms of Service</a>
+                <a href="../contact.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/orders.js"></script>
+</body>
+</html>

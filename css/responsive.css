@@ -1,0 +1,261 @@
+/* Responsive Styles */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .main-nav {
+        display: flex;
+    }
+
+    .auth-link {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    .hero {
+        padding-top: calc(var(--spacing-16) + 60px);
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        flex-direction: row;
+    }
+
+    .footer-info {
+        width: 40%;
+    }
+
+    .footer-links {
+        width: 60%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-story-content {
+        flex-direction: row;
+    }
+
+    .contact-grid {
+        grid-template-columns: 3fr 2fr;
+    }
+
+    .cart-actions {
+        flex-direction: row;
+    }
+
+    .cart-totals {
+        width: 40%;
+    }
+
+    .cart-checkout {
+        width: 60%;
+        align-self: flex-end;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .contact-info-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .filter-options {
+        flex-direction: row;
+    }
+
+    .filter-group {
+        flex: 1;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+}
+
+/* Fix for mobile menu visibility on larger screens */
+@media (min-width: 768px) {
+    .mobile-menu.active {
+        display: none;
+    }
+}
+
+/* Custom breakpoints for specific components */
+
+/* Testimonial slider responsive adjustments */
+@media (min-width: 768px) {
+    .testimonials-slider {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: var(--spacing-4);
+    }
+
+    .testimonial-card {
+        flex: 0 0 calc(50% - var(--spacing-2));
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-card {
+        flex: 0 0 calc(33.333% - var(--spacing-2) * 2);
+    }
+}
+
+/* Cart responsive adjustments */
+@media (max-width: 767px) {
+    .cart-item {
+        flex-wrap: wrap;
+    }
+
+    .cart-item-details {
+        width: calc(100% - 100px);
+        margin-bottom: var(--spacing-3);
+    }
+
+    .cart-item-quantity {
+        margin-left: 84px;
+    }
+
+    .cart-item-total {
+        margin-left: auto;
+    }
+}
+
+/* Product list responsive adjustments */
+@media (max-width: 575px) {
+    .product-card {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Form responsive adjustments */
+@media (max-width: 575px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* Hero section responsive adjustments */
+@media (max-width: 767px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Newsletter form responsive adjustments */
+@media (max-width: 575px) {
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        margin-top: var(--spacing-2);
+    }
+}
+
+/* Services card responsive adjustments */
+@media (max-width: 575px) {
+    .service-card {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Team card responsive adjustments */
+@media (max-width: 575px) {
+    .team-card {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Modal responsive adjustments */
+@media (max-width: 575px) {
+    .modal-content {
+        width: 95%;
+    }
+}

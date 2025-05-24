@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSolutions | Innovative Business Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head> 
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i data-feather="monitor"></i>
+                        <span>TechSolutions</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products & Services</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-icon">
+                        <i data-feather="shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="auth-link">
+                        <i data-feather="user"></i>
+                        <span>Sign In</span>
+                    </a>
+                    <button class="mobile-menu-toggle">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <i data-feather="monitor"></i>
+                <span>TechSolutions</span>
+            </div>
+            <button class="mobile-menu-close">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products & Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-actions">
+            <a href="cart.html" class="mobile-action-btn">
+                <i data-feather="shopping-cart"></i>
+                <span>Cart</span>
+            </a>
+            <a href="login.html" class="mobile-action-btn">
+                <i data-feather="user"></i>
+                <span>Sign In</span>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="animate-fade-in">Innovative Solutions for Modern Business</h1>
+                    <p class="animate-fade-in delay-200">Transforming businesses with cutting-edge technology and strategic solutions designed for success in today's competitive landscape.</p>
+                    <div class="hero-buttons animate-fade-in delay-400">
+                        <a href="products.html" class="btn btn-primary">Explore Solutions</a>
+                        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="services-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive business solutions tailored to your needs</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card animate-fade-in">
+                        <div class="service-icon">
+                            <i data-feather="bar-chart-2"></i>
+                        </div>
+                        <h3>Business Analytics</h3>
+                        <p>Transform raw data into actionable insights to drive strategic business decisions.</p>
+                        <a href="products.html#analytics" class="service-link">Learn More</a>
+                    </div>
+                    <div class="service-card animate-fade-in delay-200">
+                        <div class="service-icon">
+                            <i data-feather="layers"></i>
+                        </div>
+                        <h3>Software Solutions</h3>
+                        <p>Custom software development tailored to your specific business requirements.</p>
+                        <a href="products.html#software" class="service-link">Learn More</a>
+                    </div>
+                    <div class="service-card animate-fade-in delay-400">
+                        <div class="service-icon">
+                            <i data-feather="shield"></i>
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p>Comprehensive protection against evolving digital threats and vulnerabilities.</p>
+                        <a href="products.html#security" class="service-link">Learn More</a>
+                    </div>
+                    <div class="service-card animate-fade-in delay-600">
+                        <div class="service-icon">
+                            <i data-feather="cloud"></i>
+                        </div>
+                        <h3>Cloud Integration</h3>
+                        <p>Seamless migration and management of your data and applications in the cloud.</p>
+                        <a href="products.html#cloud" class="service-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Products</h2>
+                    <p>Our most popular business solutions</p>
+                </div>
+                <div class="products-grid" id="featured-products">
+                    <!-- Products will be loaded via JavaScript -->
+                    <div class="loading-spinner">
+                        <i data-feather="loader"></i>
+                    </div>
+                </div>
+                <div class="view-all-container">
+                    <a href="products.html" class="btn btn-primary">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container testimonials-slider-wrapper">
+                <div class="section-header">
+                    <h2>What Our Clients Say</h2>
+                    <p>Success stories from businesses we've transformed</p>
+                </div>
+                <div class="testimonials-slider" id="testimonials-slider">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"TechSolutions transformed our operations with their analytics platform. We've seen a 30% increase in efficiency since implementation."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="John Smith">
+                            <div class="author-info">
+                                <h4>John Smith</h4>
+                                <p>CEO, Smith Enterprises</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The cybersecurity solutions provided by TechSolutions have given us peace of mind knowing our data is protected against modern threats."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sarah Johnson">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CTO, Johnson Technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Cloud migration seemed daunting until we partnered with TechSolutions. Their team made the transition seamless and stress-free."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Robert Davis">
+                            <div class="author-info">
+                                <h4>Robert Davis</h4>
+                                <p>COO, Davis Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"TechSolutions transformed our operations with their analytics platform. We've seen a 30% increase in efficiency since implementation."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="John Smith">
+                            <div class="author-info">
+                                <h4>John Smith</h4>
+                                <p>CEO, Smith Enterprises</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"TechSolutions transformed our operations with their analytics platform. We've seen a 30% increase in efficiency since implementation."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="John Smith">
+                            <div class="author-info">
+                                <h4>John Smith</h4>
+                                <p>CEO, Smith Enterprises</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Cloud migration seemed daunting until we partnered with TechSolutions. Their team made the transition seamless and stress-free."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Robert Davis">
+                            <div class="author-info">
+                                <h4>Robert Davis</h4>
+                                <p>COO, Davis Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Cloud migration seemed daunting until we partnered with TechSolutions. Their team made the transition seamless and stress-free."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Robert Davis">
+                            <div class="author-info">
+                                <h4>Robert Davis</h4>
+                                <p>COO, Davis Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Cloud migration seemed daunting until we partnered with TechSolutions. Their team made the transition seamless and stress-free."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Robert Davis">
+                            <div class="author-info">
+                                <h4>Robert Davis</h4>
+                                <p>COO, Davis Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Cloud migration seemed daunting until we partnered with TechSolutions. Their team made the transition seamless and stress-free."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Robert Davis">
+                            <div class="author-info">
+                                <h4>Robert Davis</h4>
+                                <p>COO, Davis Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-navigation">
+                    <button class="prev-btn" id="testimonial-prev">
+                        <i data-feather="chevron-left"></i>
+                    </button>
+                    <div class="testimonials-dots" id="testimonials-dots">
+                        <button class="dot active" data-index="0"></button>
+                        <button class="dot" data-index="1"></button>
+                        <button class="dot" data-index="2"></button>
+                    </div>
+                    <button class="next-btn" id="testimonial-next">
+                        <i data-feather="chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News -->
+        <section class="latest-news">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Latest News</h2>
+                    <p>Stay updated with our latest developments</p>
+                </div>
+                <div class="news-grid">
+                    <div class="news-card animate-fade-in">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Tech Innovation Summit">
+                            <div class="news-date">
+                                <span class="day">15</span>
+                                <span class="month">Jun</span>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Tech Innovation Summit 2025</h3>
+                            <p>Join us for our annual summit where we showcase the latest in business technology and innovation.</p>
+                            <a href="news-detail.html?id=1" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                    <div class="news-card animate-fade-in delay-200">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="New Analytics Platform Release">
+                            <div class="news-date">
+                                <span class="day">03</span>
+                                <span class="month">Jun</span>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <h3>New Analytics Platform Release</h3>
+                            <p>Our latest analytics platform brings powerful new features to help businesses make better decisions.</p>
+                            <a href="news-detail.html?id=2" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                    <div class="news-card animate-fade-in delay-400">
+                        <div class="news-image">
+                            <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Expansion to European Market">
+                            <div class="news-date">
+                                <span class="day">22</span>
+                                <span class="month">May</span>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Expansion to European Market</h3>
+                            <p>TechSolutions is proud to announce our expansion into the European market with new offices in Berlin.</p>
+                            <a href="news-detail.html?id=3" class="news-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-container">
+                    <a href="news.html" class="btn btn-secondary">View All News</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Contact us today for a free consultation and discover how our solutions can drive your success.</p>
+                    <a href="contact.html" class="btn btn-accent">Get Started</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i data-feather="monitor"></i>
+                        <span>TechSolutions</span>
+                    </div>
+                    <p>Innovative business solutions designed to transform your operations and drive success in today's competitive landscape.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i data-feather="facebook"></i></a>
+                        <a href="#" class="social-link"><i data-feather="twitter"></i></a>
+                        <a href="#" class="social-link"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="social-link"><i data-feather="instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products & Services</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="login.html">My Account</a></li>
+                            <li><a href="cart.html">View Cart</a></li>
+                            <li><a href="dashboard/orders.html">Order Tracking</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li>
+                                <i data-feather="map-pin"></i>
+                                <span>123 Business Avenue, Suite 100, San Francisco, CA 94107</span>
+                            </li>
+                            <li>
+                                <i data-feather="phone"></i>
+                                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                            </li>
+                            <li>
+                                <i data-feather="mail"></i>
+                                <a href="mailto:info@techsolutions.com">info@techsolutions.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with our latest news and special offers</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> TechSolutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

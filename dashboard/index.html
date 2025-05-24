@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | TechSolutions</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="dashboard-page">
+    <header id="dashboard-header">
+        <div class="dashboard-header-content">
+            <div class="dashboard-logo">
+                <a href="../index.html">
+                    <i data-feather="monitor"></i>
+                    <span>TechSolutions</span>
+                </a>
+            </div>
+            <div class="dashboard-search">
+                <div class="search-input">
+                    <i data-feather="search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            <div class="dashboard-actions">
+                <a href="../cart.html" class="dashboard-icon-btn">
+                    <i data-feather="shopping-cart"></i>
+                    <span class="badge" id="cart-count">0</span>
+                </a>
+                <a href="#" class="dashboard-icon-btn">
+                    <i data-feather="bell"></i>
+                    <span class="badge">3</span>
+                </a>
+                <div class="dashboard-user-dropdown">
+                    <button class="dashboard-user-btn">
+                        <div class="user-avatar">
+                            <i data-feather="user"></i>
+                        </div>
+                        <span id="user-name">John Doe</span>
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                    <div class="dashboard-dropdown-menu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i data-feather="user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="orders.html" class="dropdown-item">
+                            <i data-feather="package"></i>
+                            <span>My Orders</span>
+                        </a>
+                        <a href="#" class="dropdown-item" id="logout-btn">
+                            <i data-feather="log-out"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="index.html">
+                            <i data-feather="home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i data-feather="package"></i>
+                            <span>My Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i data-feather="user"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products.html">
+                            <i data-feather="shopping-bag"></i>
+                            <span>Browse Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="sidebar-logout-btn">
+                            <i data-feather="log-out"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-welcome">
+                <h1>Welcome, <span id="welcome-name">John</span>!</h1>
+                <p>Here's an overview of your account and recent activities.</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="package"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Orders</h3>
+                        <p class="stat-value" id="order-count">5</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Pending</h3>
+                        <p class="stat-value" id="pending-count">2</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="truck"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Shipped</h3>
+                        <p class="stat-value" id="shipped-count">1</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Completed</h3>
+                        <p class="stat-value" id="completed-count">2</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-recent-orders">
+                <div class="section-header">
+                    <h2>Recent Orders</h2>
+                    <a href="orders.html" class="btn btn-secondary btn-sm">View All</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Products</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-orders-table">
+                            <!-- Orders will be loaded via JavaScript -->
+                            <tr>
+                                <td colspan="6" class="table-loading">
+                                    <div class="loading-spinner">
+                                        <i data-feather="loader"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="dashboard-sections">
+                <div class="dashboard-section account-info">
+                    <div class="section-header">
+                        <h2>Account Information</h2>
+                        <a href="profile.html" class="btn btn-secondary btn-sm">Edit</a>
+                    </div>
+                    <div class="account-details">
+                        <div class="account-detail">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value" id="account-name">John Doe</span>
+                        </div>
+                        <div class="account-detail">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value" id="account-email">john.doe@example.com</span>
+                        </div>
+                        <div class="account-detail">
+                            <span class="detail-label">Phone:</span>
+                            <span class="detail-value" id="account-phone">(123) 456-7890</span>
+                        </div>
+                        <div class="account-detail">
+                            <span class="detail-label">Member Since:</span>
+                            <span class="detail-value" id="account-joined">January 15, 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section recommended-products">
+                    <div class="section-header">
+                        <h2>Recommended For You</h2>
+                        <a href="../products.html" class="btn btn-secondary btn-sm">View All</a>
+                    </div>
+                    <div class="recommended-grid" id="recommended-products">
+                        <!-- Products will be loaded via JavaScript -->
+                        <div class="loading-spinner">
+                            <i data-feather="loader"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer id="dashboard-footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> TechSolutions. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-service.html">Terms of Service</a>
+                <a href="../contact.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

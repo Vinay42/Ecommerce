@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Services | TechSolutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i data-feather="monitor"></i>
+                        <span>TechSolutions</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="active"><a href="products.html">Products & Services</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-icon">
+                        <i data-feather="shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="auth-link">
+                        <i data-feather="user"></i>
+                        <span>Sign In</span>
+                    </a>
+                    <button class="mobile-menu-toggle">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <i data-feather="monitor"></i>
+                <span>TechSolutions</span>
+            </div>
+            <button class="mobile-menu-close">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="active"><a href="products.html">Products & Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-actions">
+            <a href="cart.html" class="mobile-action-btn">
+                <i data-feather="shopping-cart"></i>
+                <span>Cart</span>
+            </a>
+            <a href="login.html" class="mobile-action-btn">
+                <i data-feather="user"></i>
+                <span>Sign In</span>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Products & Services</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <i data-feather="chevron-right"></i>
+                    <span>Products & Services</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="products-filter">
+            <div class="container">
+                <div class="filter-container">
+                    <div class="search-bar">
+                        <input type="text" id="product-search" placeholder="Search products...">
+                        <button id="search-btn">
+                            <i data-feather="search"></i>
+                        </button>
+                    </div>
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <label for="category-filter">Category:</label>
+                            <select id="category-filter">
+                                <option value="all">All Categories</option>
+                                <option value="software">Software</option>
+                                <option value="hardware">Hardware</option>
+                                <option value="services">Services</option>
+                                <option value="solutions">Solutions</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sort-filter">Sort By:</label>
+                            <select id="sort-filter">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be loaded via JavaScript -->
+                    <div class="loading-spinner">
+                        <i data-feather="loader"></i>
+                    </div>
+                </div>
+                <div class="pagination" id="pagination">
+                    <!-- Pagination will be added via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive business solutions tailored to your needs</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card animate-fade-in" id="analytics">
+                        <div class="service-icon">
+                            <i data-feather="bar-chart-2"></i>
+                        </div>
+                        <h3>Business Analytics</h3>
+                        <p>Transform raw data into actionable insights to drive strategic business decisions.</p>
+                        <ul class="service-features">
+                            <li><i data-feather="check"></i> Advanced data visualization</li>
+                            <li><i data-feather="check"></i> Predictive analytics</li>
+                            <li><i data-feather="check"></i> Real-time dashboards</li>
+                            <li><i data-feather="check"></i> Custom reporting</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary request-quote" data-service="Business Analytics">Request Quote</a>
+                    </div>
+                    <div class="service-card animate-fade-in delay-200" id="software">
+                        <div class="service-icon">
+                            <i data-feather="layers"></i>
+                        </div>
+                        <h3>Software Solutions</h3>
+                        <p>Custom software development tailored to your specific business requirements.</p>
+                        <ul class="service-features">
+                            <li><i data-feather="check"></i> Custom application development</li>
+                            <li><i data-feather="check"></i> Enterprise software integration</li>
+                            <li><i data-feather="check"></i> Legacy system modernization</li>
+                            <li><i data-feather="check"></i> Mobile application development</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary request-quote" data-service="Software Solutions">Request Quote</a>
+                    </div>
+                    <div class="service-card animate-fade-in delay-400" id="security">
+                        <div class="service-icon">
+                            <i data-feather="shield"></i>
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p>Comprehensive protection against evolving digital threats and vulnerabilities.</p>
+                        <ul class="service-features">
+                            <li><i data-feather="check"></i> Security assessment</li>
+                            <li><i data-feather="check"></i> Threat detection and response</li>
+                            <li><i data-feather="check"></i> Data protection</li>
+                            <li><i data-feather="check"></i> Security training</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary request-quote" data-service="Cybersecurity">Request Quote</a>
+                    </div>
+                    <div class="service-card animate-fade-in delay-600" id="cloud">
+                        <div class="service-icon">
+                            <i data-feather="cloud"></i>
+                        </div>
+                        <h3>Cloud Integration</h3>
+                        <p>Seamless migration and management of your data and applications in the cloud.</p>
+                        <ul class="service-features">
+                            <li><i data-feather="check"></i> Cloud migration strategy</li>
+                            <li><i data-feather="check"></i> Multi-cloud management</li>
+                            <li><i data-feather="check"></i> Cloud optimization</li>
+                            <li><i data-feather="check"></i> Cloud security</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary request-quote" data-service="Cloud Integration">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Modal -->
+        <div class="modal" id="quote-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Request a Quote</h3>
+                    <button class="modal-close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="quote-form">
+                        <input type="hidden" id="quote-service" name="service">
+                        <div class="form-group">
+                            <label for="quote-name">Full Name</label>
+                            <input type="text" id="quote-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-email">Email Address</label>
+                            <input type="email" id="quote-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-company">Company Name</label>
+                            <input type="text" id="quote-company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-phone">Phone Number</label>
+                            <input type="tel" id="quote-phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-details">Project Details</label>
+                            <textarea id="quote-details" name="details" rows="4" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Can't Find What You're Looking For?</h2>
+                    <p>Contact our team for customized solutions tailored to your specific business needs.</p>
+                    <a href="contact.html" class="btn btn-accent">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i data-feather="monitor"></i>
+                        <span>TechSolutions</span>
+                    </div>
+                    <p>Innovative business solutions designed to transform your operations and drive success in today's competitive landscape.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i data-feather="facebook"></i></a>
+                        <a href="#" class="social-link"><i data-feather="twitter"></i></a>
+                        <a href="#" class="social-link"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="social-link"><i data-feather="instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products & Services</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="login.html">My Account</a></li>
+                            <li><a href="cart.html">View Cart</a></li>
+                            <li><a href="dashboard/orders.html">Order Tracking</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li>
+                                <i data-feather="map-pin"></i>
+                                <span>123 Business Avenue, Suite 100, San Francisco, CA 94107</span>
+                            </li>
+                            <li>
+                                <i data-feather="phone"></i>
+                                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                            </li>
+                            <li>
+                                <i data-feather="mail"></i>
+                                <a href="mailto:info@techsolutions.com">info@techsolutions.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with our latest news and special offers</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> TechSolutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

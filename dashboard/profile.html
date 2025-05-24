@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | TechSolutions</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="dashboard-page">
+    <header id="dashboard-header">
+        <div class="dashboard-header-content">
+            <div class="dashboard-logo">
+                <a href="../index.html">
+                    <i data-feather="monitor"></i>
+                    <span>TechSolutions</span>
+                </a>
+            </div>
+            <div class="dashboard-search">
+                <div class="search-input">
+                    <i data-feather="search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            <div class="dashboard-actions">
+                <a href="../cart.html" class="dashboard-icon-btn">
+                    <i data-feather="shopping-cart"></i>
+                    <span class="badge" id="cart-count">0</span>
+                </a>
+                <a href="#" class="dashboard-icon-btn">
+                    <i data-feather="bell"></i>
+                    <span class="badge">3</span>
+                </a>
+                <div class="dashboard-user-dropdown">
+                    <button class="dashboard-user-btn">
+                        <div class="user-avatar">
+                            <i data-feather="user"></i>
+                        </div>
+                        <span id="user-name">John Doe</span>
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                    <div class="dashboard-dropdown-menu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i data-feather="user"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="orders.html" class="dropdown-item">
+                            <i data-feather="package"></i>
+                            <span>My Orders</span>
+                        </a>
+                        <a href="#" class="dropdown-item" id="logout-btn">
+                            <i data-feather="log-out"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i data-feather="home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i data-feather="package"></i>
+                            <span>My Orders</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="profile.html">
+                            <i data-feather="user"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products.html">
+                            <i data-feather="shopping-bag"></i>
+                            <span>Browse Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="sidebar-logout-btn">
+                            <i data-feather="log-out"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="page-header">
+                <h1>My Profile</h1>
+                <p>Manage your account information</p>
+            </div>
+
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <div class="profile-menu">
+                        <button class="profile-menu-item active" data-tab="personal-info">
+                            <i data-feather="user"></i>
+                            <span>Personal Information</span>
+                        </button>
+                        <button class="profile-menu-item" data-tab="change-password">
+                            <i data-feather="lock"></i>
+                            <span>Change Password</span>
+                        </button>
+                        <button class="profile-menu-item" data-tab="addresses">
+                            <i data-feather="map-pin"></i>
+                            <span>Addresses</span>
+                        </button>
+                        <button class="profile-menu-item" data-tab="notifications">
+                            <i data-feather="bell"></i>
+                            <span>Notifications</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <!-- Personal Information Tab -->
+                    <div class="profile-tab active" id="personal-info">
+                        <h2>Personal Information</h2>
+                        <form id="personal-info-form" class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="first_name" value="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" name="last_name" value="Doe">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" value="john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" value="(123) 456-7890">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company Name (Optional)</label>
+                                <input type="text" id="company" name="company" value="Acme Inc.">
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Change Password Tab -->
+                    <div class="profile-tab" id="change-password">
+                        <h2>Change Password</h2>
+                        <form id="password-form" class="profile-form">
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <input type="password" id="current-password" name="current_password">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="new-password">New Password</label>
+                                    <input type="password" id="new-password" name="new_password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm New Password</label>
+                                    <input type="password" id="confirm-password" name="confirm_password">
+                                </div>
+                            </div>
+                            <div class="password-requirements">
+                                <h4>Password Requirements:</h4>
+                                <ul>
+                                    <li>Minimum 8 characters</li>
+                                    <li>At least one uppercase letter</li>
+                                    <li>At least one lowercase letter</li>
+                                    <li>At least one number</li>
+                                    <li>At least one special character</li>
+                                </ul>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Update Password</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Addresses Tab -->
+                    <div class="profile-tab" id="addresses">
+                        <div class="tab-header">
+                            <h2>Addresses</h2>
+                            <button class="btn btn-secondary" id="add-address-btn">
+                                <i data-feather="plus"></i> Add New Address
+                            </button>
+                        </div>
+                        <div class="addresses-list" id="addresses-list">
+                            <div class="address-card">
+                                <div class="address-badge default">Default</div>
+                                <div class="address-content">
+                                    <h3>Home</h3>
+                                    <p>John Doe<br>
+                                    123 Main Street, Apt 4B<br>
+                                    San Francisco, CA 94107<br>
+                                    United States<br>
+                                    (123) 456-7890</p>
+                                </div>
+                                <div class="address-actions">
+                                    <button class="btn btn-sm btn-icon" title="Edit Address">
+                                        <i data-feather="edit-2"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-icon" title="Delete Address">
+                                        <i data-feather="trash-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="address-card">
+                                <div class="address-content">
+                                    <h3>Work</h3>
+                                    <p>John Doe<br>
+                                    456 Business Avenue, Suite 100<br>
+                                    San Francisco, CA 94103<br>
+                                    United States<br>
+                                    (123) 456-7890</p>
+                                </div>
+                                <div class="address-actions">
+                                    <button class="btn btn-sm btn-text" title="Set as Default">
+                                        Set as Default
+                                    </button>
+                                    <button class="btn btn-sm btn-icon" title="Edit Address">
+                                        <i data-feather="edit-2"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-icon" title="Delete Address">
+                                        <i data-feather="trash-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Tab -->
+                    <div class="profile-tab" id="notifications">
+                        <h2>Notification Preferences</h2>
+                        <form id="notifications-form" class="profile-form">
+                            <div class="notification-group">
+                                <h3>Email Notifications</h3>
+                                <div class="notification-option">
+                                    <div class="switch-container">
+                                        <input type="checkbox" id="order-updates" name="order_updates" class="switch-input" checked>
+                                        <label for="order-updates" class="switch-label"></label>
+                                    </div>
+                                    <div class="notification-details">
+                                        <label for="order-updates">Order Updates</label>
+                                        <p>Receive notifications about your order status and shipping updates.</p>
+                                    </div>
+                                </div>
+                                <div class="notification-option">
+                                    <div class="switch-container">
+                                        <input type="checkbox" id="promotions" name="promotions" class="switch-input" checked>
+                                        <label for="promotions" class="switch-label"></label>
+                                    </div>
+                                    <div class="notification-details">
+                                        <label for="promotions">Promotions and Offers</label>
+                                        <p>Receive notifications about special offers, discounts, and promotions.</p>
+                                    </div>
+                                </div>
+                                <div class="notification-option">
+                                    <div class="switch-container">
+                                        <input type="checkbox" id="newsletter" name="newsletter" class="switch-input" checked>
+                                        <label for="newsletter" class="switch-label"></label>
+                                    </div>
+                                    <div class="notification-details">
+                                        <label for="newsletter">Newsletter</label>
+                                        <p>Receive our monthly newsletter with product updates and industry news.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Preferences</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Address Modal -->
+    <div class="modal" id="address-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="address-modal-title">Add New Address</h3>
+                <button class="modal-close">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="address-form">
+                    <input type="hidden" id="address-id">
+                    <div class="form-group">
+                        <label for="address-name">Address Name</label>
+                        <input type="text" id="address-name" name="address_name" placeholder="Home, Work, etc." required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address-firstname">First Name</label>
+                            <input type="text" id="address-firstname" name="firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-lastname">Last Name</label>
+                            <input type="text" id="address-lastname" name="lastname" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-line1">Address Line 1</label>
+                        <input type="text" id="address-line1" name="address_line1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-line2">Address Line 2 (Optional)</label>
+                        <input type="text" id="address-line2" name="address_line2">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address-city">City</label>
+                            <input type="text" id="address-city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-state">State/Province</label>
+                            <input type="text" id="address-state" name="state" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address-zip">Postal/ZIP Code</label>
+                            <input type="text" id="address-zip" name="zip" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-country">Country</label>
+                            <select id="address-country" name="country" required>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="JP">Japan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-phone">Phone Number</label>
+                        <input type="tel" id="address-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="address-default" name="is_default">
+                            <label for="address-default">Set as default address</label>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-address-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Address</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer id="dashboard-footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> TechSolutions. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-service.html">Terms of Service</a>
+                <a href="../contact.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>
